@@ -1,2 +1,1 @@
-# PayelBhattacharjee14.github.io
-Personal website
+This is my personal website repository that I made by using a free academic website template (https://github.com/randal-sean-harrison/academic-website-template-bs3). You may download this and use it to create your own website(s), as long as you abide by the license restrictions.
