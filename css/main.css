@@ -604,3 +604,16 @@ dd {
   background-color: #1585cf;
   opacity: .8;
 }
+.profile-header-text h1 {
+  margin-bottom: 22px;
+}
+
+.profile-header-text .position-title.compact-line {
+  margin-top: 0;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.profile-header-text .position-title.compact-line:last-of-type {
+  margin-bottom: 24px;
+}
