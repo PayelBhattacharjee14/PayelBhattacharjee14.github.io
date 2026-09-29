@@ -45,6 +45,24 @@
   <!-- Local styles -->
   <link rel="stylesheet" href="css/main.css">
 
+  <style>
+    /* Native list numbering updates automatically; these rules reset the shared unnumbered-list layout. */
+    ol.publications {
+      list-style: decimal outside;
+      padding-left: 2rem;
+    }
+    ol.publications > li {
+      margin-left: 0;
+      padding-left: 0.4rem;
+      text-indent: 0;
+    }
+    ol.publications > li::marker {
+      color: var(--graphite);
+      font-weight: 600;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -65,7 +83,8 @@
           <a href="https://scholar.google.com/citations?user=9V4cK-0AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
         </p>
 
-        <ul class="publications">
+        <!-- Numbers update automatically when publication items are added or reordered. -->
+        <ol class="publications">
           <li>
             <p><a href="https://arxiv.org/abs/2609.30405" target="_blank" rel="noopener noreferrer">Adaptive Multi-Value Control in LLMs via Causal Activation Steering</a>
               <br>
@@ -138,7 +157,7 @@
               <em>2020 2nd International Conference on Innovative Mechanisms for Industry Applications (ICIMIA)</em>, pp. 240&ndash;244, 2020.
             </p>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </div>
