@@ -1,0 +1,25 @@
+/* Scoped styles keep the existing pages unchanged. */
+.projects-page .projects-intro { max-width: 52rem; }
+.projects-page .project-index { display: flex; flex-wrap: wrap; gap: .65rem 1.25rem; padding: 0 0 2rem; }
+.projects-page .project-index a { font-size: .9rem; }
+.projects-page .research-project { padding: 2.25rem 0; border-top: 1px solid #dce2e7; scroll-margin-top: 1.5rem; }
+.projects-page .research-project h2 { font-size: 1.45rem; line-height: 1.4; margin: 0 0 .5rem !important; }
+.projects-page .project-topics { color: #506578; font-size: .85rem; margin-bottom: 1.5rem; }
+.projects-page .project-figure { margin: 0 0 1.5rem; padding: 1rem; border: 1px solid #e3e7eb; border-radius: 4px; background: #fff; }
+.projects-page #main-container .project-figure a { display: block; border: 0; padding: 0; }
+.projects-page .project-figure img { display: block; width: 100%; height: auto; }
+.projects-page .project-summary { line-height: 1.75; margin-bottom: 1rem; }
+.projects-page .project-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.projects-page .project-links a { font-size: .9rem; }
+.projects-page .projects-complete-list { border-top: 1px solid #dce2e7; padding-top: 2rem; }
+.projects-page a:focus-visible { outline: 3px solid #1585cf; outline-offset: 5px; }
+@media (max-width: 767px) {
+  .projects-page .navbar-brand { font-size: clamp(1rem, 5.4vw, 1.8rem) !important; }
+  .projects-page .research-project { padding: 1.75rem 0; }
+  .projects-page .research-project h2 { font-size: 1.25rem; }
+  .projects-page .project-figure { padding: .35rem; }
+}
+@media print {
+  .projects-page nav, .projects-page .project-index, .projects-page #page-footer { display: none; }
+  .projects-page .research-project { break-inside: avoid; }
+}
