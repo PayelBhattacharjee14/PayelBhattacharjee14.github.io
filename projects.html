@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research projects by Payel Bhattacharjee in LLM alignment, differential privacy, causal discovery, and efficient inference.">
+  <title>Projects | Payel Bhattacharjee</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body class="projects-page" id="top">
+  <a class="sr-only sr-only-focusable" href="#main-container">Skip to projects</a>
+  <div id="navbar-include"></div>
+  <div class="spacer-div-3 hidden-xs" aria-hidden="true"></div>
+  <main id="main-container" class="container">
+    <h1>Projects</h1>
+    <p class="projects-intro">Selected research in LLM alignment, privacy, and efficient inference. Each project includes a brief overview and a figure from the paper. Click a figure to view it at full size.</p>
+    <div class="project-index" aria-label="Jump to a project">
+      <a href="#aimes">AIMES</a>
+      <a href="#mars">MARS</a>
+      <a href="#props">PROPS</a>
+      <a href="#conformal-sparsification">C-SQS</a>
+      <a href="#curate">CURATE</a>
+      <a href="#dp-radiology">Learning to Diagnose Privately</a>
+      <a href="#stamp">STAMP</a>
+    </div>
+    <!-- To add a project, copy an article block and update its ID, text, figure, and paper link. -->
+    <article class="research-project" id="aimes" aria-labelledby="aimes-title">
+      <h2 id="aimes-title">Adaptive Multi-Value Control in LLMs via Causal Activation Steering</h2>
+      <p class="project-topics">LLM alignment · Activation steering · Multi-value control</p>
+      <figure class="project-figure">
+        <a href="img/projects/aimes.png" target="_blank" rel="noopener noreferrer" aria-label="View AIMES figure at full size (opens in a new tab)">
+          <img src="img/projects/aimes.png" width="2400" height="698" alt="AIMES feedback loop connecting activation extraction, value readouts, adaptive steering weights, and response generation." loading="eager" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">LLMs often need to respond to several human values at once, and fixed steering strengths cannot adapt as a response develops. AIMES uses intermediate-layer readouts to monitor value-specific states and adjusts multiple activation interventions at each decoding step. Across model families and value combinations, it shows depth-dependent advantages over fixed joint steering while using smaller activation interventions and maintaining comparable response quality.</p>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2609.30405" target="_blank" rel="noopener noreferrer" aria-label="Read the AIMES paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/aimes.png" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="mars" aria-labelledby="mars-title">
+      <h2 id="mars-title">MARS: Margin and Semantic-Aware Data Augmentation for Reward Modeling</h2>
+      <p class="project-topics">Reward modeling · Preference learning · Data augmentation</p>
+      <figure class="project-figure">
+        <a href="img/projects/mars.png" target="_blank" rel="noopener noreferrer" aria-label="View MARS figure at full size (opens in a new tab)">
+          <img src="img/projects/mars.png" width="2400" height="680" alt="MARS allocates augmentation by reward margin, then refines semantically similar chosen and rejected responses." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">Reward models must often learn from limited human preference data. MARS allocates more augmentation to preference pairs with small reward margins and uses semantic distance to identify pairs that need refinement before paraphrasing. Evaluations across three datasets and two reward-model backbones show improvements in average RewardBench performance and downstream alignment win rates over the evaluated augmentation baselines.</p>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2602.17658" target="_blank" rel="noopener noreferrer" aria-label="Read the MARS paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/mars.png" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="props" aria-labelledby="props-title">
+      <h2 id="props-title">PROPS: Progressively Private Self-alignment of Large Language Models</h2>
+      <p class="project-topics">Differential privacy · Preference privacy · Self-alignment</p>
+      <figure class="project-figure">
+        <a href="img/projects/props.png" target="_blank" rel="noopener noreferrer" aria-label="View PROPS figure at full size (opens in a new tab)">
+          <img src="img/projects/props.png" width="2400" height="871" alt="Comparison of randomized-response alignment, DP-SGD alignment, and the progressive two-stage PROPS procedure." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">Human preference labels can reveal sensitive information about the people providing feedback. PROPS protects these labels through a multi-stage alignment procedure in which previously privatized models help label data for subsequent stages. The framework provides preference-level privacy guarantees and improves alignment utility over DP-SGD and randomized-response baselines at matched privacy budgets.</p>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2508.06783" target="_blank" rel="noopener noreferrer" aria-label="Read the PROPS paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/props.png" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="conformal-sparsification" aria-labelledby="conformal-sparsification-title">
+      <h2 id="conformal-sparsification-title">Conformal Sparsification for Bandwidth-Efficient Edge-Cloud Speculative Decoding</h2>
+      <p class="project-topics">Efficient inference · Conformal prediction · Edge-cloud systems</p>
+      <figure class="project-figure">
+        <a href="img/projects/conformal-sparsification.png" target="_blank" rel="noopener noreferrer" aria-label="View C-SQS figure at full size (opens in a new tab)">
+          <img src="img/projects/conformal-sparsification.png" width="2400" height="658" alt="Draft token distributions are sparsified and quantized at the edge before cloud verification; feedback updates the conformal threshold." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">In edge-cloud speculative decoding, sending draft-token distributions can become a communication bottleneck. This work combines sparse token distributions with lattice-based quantization, using online conformal prediction to adapt the retained token set. The analysis separates rejection caused by model mismatch from quantization distortion, and experiments evaluate the resulting latency and rejection-rate trade-offs.</p>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2510.09942" target="_blank" rel="noopener noreferrer" aria-label="Read the C-SQS paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/conformal-sparsification.png" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="curate" aria-labelledby="curate-title">
+      <h2 id="curate-title">CURATE: Scaling-up Differentially Private Causal Graph Discovery</h2>
+      <p class="project-topics">Differential privacy · Causal discovery · Adaptive privacy budgets</p>
+      <figure class="project-figure">
+        <a href="img/projects/curate.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View CURATE figure at full size (opens in a new tab)">
+          <img src="img/projects/curate.jpeg" width="1914" height="419" alt="CURATE allocates privacy budgets across successive orders of conditional-independence tests and composes their privacy guarantees." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">Causal discovery makes a sequence of decisions, and privacy noise at different stages can affect the recovered graph differently. CURATE adapts the privacy budget across conditional-independence tests or score-based optimization steps while bounding cumulative privacy leakage. This allocation improves the privacy-utility trade-off over uniform budgeting in the evaluated causal-discovery settings.</p>
+      <div class="project-links">
+        <a href="https://www.mdpi.com/1099-4300/26/11/946" target="_blank" rel="noopener noreferrer" aria-label="Read the CURATE paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/curate.jpeg" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="dp-radiology" aria-labelledby="dp-radiology-title">
+      <h2 id="dp-radiology-title">Learning to Diagnose Privately: DP-Powered LLMs for Radiology Report Classification</h2>
+      <p class="project-topics">Differential privacy · Parameter-efficient fine-tuning · Medical NLP</p>
+      <figure class="project-figure">
+        <a href="img/projects/dp-radiology.jpg" target="_blank" rel="noopener noreferrer" aria-label="View Learning to Diagnose Privately figure at full size (opens in a new tab)">
+          <img src="img/projects/dp-radiology.jpg" width="880" height="380" alt="Public pretraining is followed by private fine-tuning of selected model parameters using locally available radiology data." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">Fine-tuning language models on radiology reports can expose sensitive patient information. This work combines differentially private training with Low-Rank Adaptation to classify multiple abnormalities from report text while updating a limited set of model parameters. Experiments on MIMIC-CXR and CT-RATE examine how classification performance changes with the privacy budget.</p>
+      <div class="project-links">
+        <a href="https://ieeexplore.ieee.org/document/11457868" target="_blank" rel="noopener noreferrer" aria-label="Read the Learning to Diagnose Privately paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/dp-radiology.jpg" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="research-project" id="stamp" aria-labelledby="stamp-title">
+      <h2 id="stamp-title">STAMP: Selective Task-Aware Mechanism for Text Privacy</h2>
+      <p class="project-topics">Text privacy · Task-aware privatization · Embedding perturbation</p>
+      <figure class="project-figure">
+        <a href="img/projects/stamp.png" target="_blank" rel="noopener noreferrer" aria-label="View STAMP figure at full size (opens in a new tab)">
+          <img src="img/projects/stamp.png" width="2400" height="813" alt="STAMP groups tokens by task relevance and privacy sensitivity, assigns group-wise budgets, and applies polar perturbation." loading="lazy" decoding="async">
+        </a>
+      </figure>
+      <p class="project-summary">Text tokens differ in both privacy sensitivity and relevance to a downstream task. STAMP uses these two signals to group tokens and allocate privacy budgets, then applies a polar mechanism that perturbs embedding directions while preserving their magnitudes. Evaluations on question answering and text classification demonstrate improved privacy-utility trade-offs over the compared mechanisms.</p>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2603.12237" target="_blank" rel="noopener noreferrer" aria-label="Read the STAMP paper (opens in a new tab)">Paper <span aria-hidden="true">↗</span></a>
+        <a href="img/projects/stamp.png" target="_blank" rel="noopener noreferrer">Full-size figure <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <p class="projects-complete-list">See <a href="publication.html">Publications</a> for the full publication list.</p>
+  </main>
+  <div id="page-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#navbar-include").load("navbar.html", function () {
+        $(".navbar-nav li").removeClass("active");
+        $("#projects-nav").addClass("active").find("a").attr("aria-current", "page");
+      });
+      $("#page-footer").load("footer.html");
+    });
+  </script>
+</body>
+</html>
