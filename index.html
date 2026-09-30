@@ -45,6 +45,23 @@
   <!-- Local styles -->
   <link rel="stylesheet" href="css/main.css">
 
+
+  <style>
+    .featured-project-list { display: grid; gap: 1rem; margin-bottom: 1.25rem; }
+    .featured-project { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 1.1rem; align-items: center; padding: 1rem; border: 1px solid #dce2e7; border-radius: 6px; background: #fff; }
+    #main-container .featured-project-image { display: block; padding: 0; border: 0; }
+    .featured-project-image img { display: block; width: 100%; height: auto; }
+    .featured-project h4 { font-size: 1.15rem; text-transform: none; margin: 0 0 .45rem; }
+    .featured-project p { font-size: .9rem; line-height: 1.6; margin: 0 0 .65rem; }
+    .featured-project .featured-project-status { font-size: .78rem; color: #506578; }
+    .featured-project .featured-project-link { font-size: .85rem; }
+    .featured-project a:focus-visible { outline: 3px solid #1585cf; outline-offset: 4px; }
+    @media (max-width: 600px) {
+      .featured-project { grid-template-columns: minmax(0, 1fr); }
+      .featured-project-image { margin-bottom: .35rem; }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -104,8 +121,8 @@
         <p class="position-title mt-0 mb-4" style="line-height:14%">The University of Arizona</p>
        
         <p>
-          I am a Ph.D. candidate in the
-          <a href="https://ece.engineering.arizona.edu/" target="_blank" rel="noopener noreferrer">School of Electrical, Computing, and Software Engineering</a>
+          I am a Ph.D. candidate in
+          <a href="https://ece.engineering.arizona.edu/" target="_blank" rel="noopener noreferrer">Electrical and Computer Engineering</a>
           at the University of Arizona, advised by
           <a href="https://tandonravi.github.io/" target="_blank" rel="noopener noreferrer">Dr. Ravi Tandon</a>.
           I develop methods for trustworthy and efficient AI, focusing on LLM alignment, privacy, and inference.
@@ -129,6 +146,44 @@
           <li>Efficient LLM Inference</li>
           <li>Causal Discovery and Causal Machine Learning</li>
         </ul>
+
+        <section id="featured-projects" aria-labelledby="featured-projects-title">
+          <h3 class="push-down-3" id="featured-projects-title"><span>Featured Projects</span></h3>
+          <div class="featured-project-list">
+            <article class="featured-project" aria-labelledby="featured-aimes-title">
+              <a class="featured-project-image" href="projects.html#aimes" aria-label="Explore AIMES">
+                <img src="img/projects/aimes.png" width="2400" height="698" alt="AIMES workflow showing value readouts and adaptive activation steering." loading="lazy" decoding="async">
+              </a>
+              <div>
+                <h4 id="featured-aimes-title"><a href="projects.html#aimes">AIMES</a></h4>
+                <p><strong>Adaptive multi-value steering</strong><br>Adjusting activation interventions during generation to guide LLM responses across multiple human values.</p>
+                <a class="featured-project-link" href="projects.html#aimes">Explore project <span aria-hidden="true">&#8594;</span></a>
+              </div>
+            </article>
+            <article class="featured-project" aria-labelledby="featured-mars-title">
+              <a class="featured-project-image" href="projects.html#mars" aria-label="Explore MARS">
+                <img src="img/projects/mars.png" width="2400" height="680" alt="MARS workflow for margin-based augmentation and semantic refinement." loading="lazy" decoding="async">
+              </a>
+              <div>
+                <h4 id="featured-mars-title"><a href="projects.html#mars">MARS</a></h4>
+                <p><strong>Data-efficient reward modeling</strong><br>Using reward margins and semantic differences to allocate preference-data augmentation.</p>
+                <a class="featured-project-link" href="projects.html#mars">Explore project <span aria-hidden="true">&#8594;</span></a>
+              </div>
+            </article>
+            <article class="featured-project" aria-labelledby="featured-cssd-title">
+              <a class="featured-project-image" href="projects.html#cssd" aria-label="Explore CSSD">
+                <img src="img/projects/cssd.png" width="1800" height="501" alt="Comparison of SSD and CSSD cache construction and verification." loading="lazy" decoding="async">
+              </a>
+              <div>
+                <h4 id="featured-cssd-title"><a href="projects.html#cssd">CSSD</a></h4>
+                <p><strong>Conformal speculative decoding</strong><br>Using context-dependent rejection modeling and conformal calibration to select speculative cache entries.</p>
+                <p class="featured-project-status">Asilomar 2026 · Oral presentation</p>
+                <a class="featured-project-link" href="projects.html#cssd">Explore project <span aria-hidden="true">&#8594;</span></a>
+              </div>
+            </article>
+          </div>
+          <p><a href="projects.html">View all projects <span aria-hidden="true">&#8594;</span></a></p>
+        </section>
 
         <h3 class="push-down-3"><span>Recent News</span></h3>
         <p>
