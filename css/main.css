@@ -1,9 +1,13 @@
 :root {
-  --bright-blue: #007bff;
-  --graphite: #506578;
+  --bright-blue: #245B8F;
+  --graphite: #28384A;
   --slate-gray: lightslategray;
-  --maroon: #AC294D;
-  --nd-blue: #20364c;
+  --maroon: #245B8F; /* Legacy token used by section headings. */
+  --nd-blue: #28384A;
+  --trench-blue: #28384A;
+  --powder-blue: #E6F0FA;
+  --powder-blue-hover: #D4E5F6;
+  --theme-border: #CFDEEC;
   --white: white;
 }
 
@@ -40,7 +44,7 @@ body {
 }
 
 #badge-more {
-  background-color: #1585cf;
+  background-color: #245B8F;
   color: white;
   cursor: pointer;
 }
@@ -96,7 +100,7 @@ h4, h5, h6 {
 .panel-heading h5 {
   font-style: italic;
   font-weight: 500;
-  color: #1585cf !important;
+  color: #245B8F !important;
 }
 
 #projects {
@@ -226,13 +230,13 @@ blockquote footer {
 
 /* Links */
 #main-container a {
-  color: #1585cf;
+  color: #245B8F;
   font-weight: 500;
 }
 
 #main-container a:hover {
-  color: #1585cf;
-  border-bottom: 1px dashed #1585cf;
+  color: #245B8F;
+  border-bottom: 1px dashed #245B8F;
   text-decoration: none;
   padding-bottom: 2px;
 }
@@ -439,14 +443,14 @@ nav {
 
 #link-to-docs,
 #link-to-teaching-philosophy {
-  color: #1585cf;
+  color: #245B8F;
 }
 
 #link-to-docs:hover,
 #link-to-docs:active,
 #link-to-docs:visited,
 #link-to-docs:focus {
-  border: 1px solid #1585cf !important;
+  border: 1px solid #245B8F !important;
   padding-bottom: 6px !important;
   background: transparent !important;
 }
@@ -488,7 +492,7 @@ footer {
 }
 
 .social-icons li a {
-  color: #1585cf;
+  color: #245B8F;
 }
 
 .social-icons li a:hover {
@@ -592,7 +596,7 @@ dd {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #1585cf;
+  background-color: #245B8F;
   color: white;
   padding: 12px 6px 12px 6px;
   border-radius: .25rem 0 0 .25rem;
@@ -601,7 +605,7 @@ dd {
 }
 
 #topper:hover {
-  background-color: #1585cf;
+  background-color: #245B8F;
   opacity: .8;
 }
 
@@ -618,3 +622,57 @@ dd {
 .profile-header-text .position-title.compact-line:last-of-type {
   margin-bottom: 24px;
 }
+
+/* Powder blue theme: dark text on a light navigation background. */
+.navbar.navbar-inverse {
+  background: var(--powder-blue);
+  border-color: var(--theme-border);
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-brand.white,
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li.active,
+.navbar-inverse .navbar-nav > li.active > a {
+  color: var(--graphite) !important;
+}
+.navbar-inverse .navbar-nav > li > a {
+  font-weight: 400;
+}
+.navbar-inverse .navbar-nav > li.active > a {
+  font-weight: 600 !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:active,
+.navbar-inverse .navbar-nav > li.active > a:hover,
+.navbar-inverse .navbar-nav > li.active > a:focus {
+  color: var(--graphite) !important;
+  background: var(--powder-blue-hover) !important;
+}
+.navbar-inverse .navbar-toggle {
+  color: var(--graphite);
+  border-color: #829CB5;
+  background: transparent;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  color: var(--graphite);
+  background: var(--powder-blue-hover);
+}
+.navbar-inverse .navbar-toggle .icon-bar { background: var(--graphite); }
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form { border-color: var(--theme-border); }
+.navbar-inverse .navbar-brand:focus-visible,
+.navbar-inverse .navbar-nav > li > a:focus-visible,
+.navbar-inverse .navbar-toggle:focus-visible {
+  outline: 2px solid var(--bright-blue);
+  outline-offset: 2px;
+}
+h1 { color: var(--graphite) !important; }
+#main-container .home-disclosure,
+#main-container .featured-project { border-color: var(--theme-border); }
+#main-container .home-disclosure > summary:hover { background: #F0F6FC; }
+#main-container .home-disclosure[open] > summary { border-bottom-color: var(--theme-border); }
+#main-container .home-disclosure > summary:focus-visible,
+#main-container .featured-project a:focus-visible,
+body.projects-page a:focus-visible { outline-color: var(--bright-blue); }
