@@ -62,6 +62,28 @@
     }
   </style>
 
+
+  <style>
+    .home-disclosure { margin-top: 1rem; border: 1px solid #dce2e7; border-radius: 6px; background: #fff; }
+    .home-disclosure:first-of-type { margin-top: 2rem; }
+    .home-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; cursor: pointer; list-style: none; border-radius: 6px; }
+    .home-disclosure > summary::-webkit-details-marker { display: none; }
+    .home-disclosure > summary::marker { content: ""; }
+    .home-disclosure > summary h3 { margin: 0 !important; font-size: 1.2rem; line-height: 1.4; }
+    .home-disclosure > summary h3::after { display: none; }
+    .home-disclosure > summary:hover { background: #f5f7f9; }
+    .home-disclosure > summary:focus-visible { outline: 3px solid #1585cf; outline-offset: 3px; }
+    .home-disclosure .disclosure-indicator { flex: 0 0 1.2rem; text-align: center; color: var(--maroon); font-size: 1.5rem; line-height: 1; }
+    .home-disclosure .disclosure-indicator::before { content: "+"; }
+    .home-disclosure[open] > summary .disclosure-indicator::before { content: "\2212"; }
+    .home-disclosure[open] > summary { border-bottom: 1px solid #e5e9ed; border-radius: 6px 6px 0 0; }
+    .home-disclosure-content { padding: 1.15rem; }
+    .home-disclosure-content > p:last-child { margin-bottom: 0; }
+    @media (max-width: 767px) {
+      .home-disclosure > summary, .home-disclosure-content { padding: .85rem; }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -147,8 +169,12 @@
           <li>Causal Discovery and Causal Machine Learning</li>
         </ul>
 
-        <section id="featured-projects" aria-labelledby="featured-projects-title">
-          <h3 class="push-down-3" id="featured-projects-title"><span>Featured Projects</span></h3>
+        <details class="home-disclosure" id="featured-projects">
+          <summary>
+            <h3 id="featured-projects-title">Featured Projects</h3>
+            <span class="disclosure-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="home-disclosure-content">
           <div class="featured-project-list">
             <article class="featured-project" aria-labelledby="featured-aimes-title">
               <a class="featured-project-image" href="projects.html#aimes" aria-label="Explore AIMES">
@@ -183,9 +209,15 @@
             </article>
           </div>
           <p><a href="projects.html">View all projects <span aria-hidden="true">&#8594;</span></a></p>
-        </section>
+          </div>
+        </details>
 
-        <h3 class="push-down-3"><span>Recent News</span></h3>
+        <details class="home-disclosure" id="recent-news">
+          <summary>
+            <h3 id="recent-news-title">Recent News</h3>
+            <span class="disclosure-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="home-disclosure-content">
         <p>
           <strong>Asilomar 2026 (Oral):</strong>
           Our work <em>Conformal Speculative Speculative Decoding (CSSD)</em> was accepted for an oral presentation at the 2026 Asilomar Conference on Signals, Systems, and Computers.
@@ -210,8 +242,15 @@
           <strong>ECE Graduate Poster Symposium 2024:</strong>
           Received the People's Choice Award for presenting <em>CURATE: Scaling up Differentially Private Causal Graph Discovery</em>.
         </p>
+          </div>
+        </details>
 
-        <h3 class="push-down-3"><span>Awards</span></h3>
+        <details class="home-disclosure" id="awards">
+          <summary>
+            <h3 id="awards-title">Awards</h3>
+            <span class="disclosure-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="home-disclosure-content">
         <p>
           <strong>People's Choice Award</strong>, ECE Graduate Poster Symposium 2024, University of Arizona, for the research presentation
           <em>CURATE: Scaling up Differentially Private Causal Graph Discovery</em>.
@@ -219,6 +258,9 @@
         <p>
           <strong>KIIT Merit Scholarship</strong>, Kalinga Institute of Industrial Technology, for obtaining the highest CGPA (10.0/10.0) in the academic year 2017&ndash;2018.
         </p>
+          </div>
+        </details>
+
       </div>
     </div>
 
